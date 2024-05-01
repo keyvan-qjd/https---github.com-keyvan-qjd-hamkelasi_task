@@ -63,6 +63,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        foregroundColor: Colors.white,
         centerTitle: true,
         backgroundColor: Colors.teal,
         title: const Text('صفحه ورود'),
@@ -71,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Center(
           child: Container(
             height: 850,
-            color: Colors.teal.withOpacity(0.2),
+            color: Colors.teal.withOpacity(0.3),
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Form(
@@ -100,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                           filled: true,
                           hintText: "نام کاربری خود را وارد کنید",
                           border: UnderlineInputBorder(
-                            borderRadius: BorderRadius.circular(4),
+                            borderRadius: BorderRadius.circular(8),
                           ),
                         ),
                         validator: (value) {
@@ -134,7 +135,7 @@ class _LoginPageState extends State<LoginPage> {
                           filled: true,
                           hintText: "رمز عبور خود را وارد کنید",
                           border: UnderlineInputBorder(
-                            borderRadius: BorderRadius.circular(4),
+                            borderRadius: BorderRadius.circular(8),
                           ),
                         ),
                         validator: (value) {

@@ -17,7 +17,7 @@ class ForgottenPassword extends StatelessWidget {
         child: Center(
           child: Container(
             height: 900,
-            color: Colors.teal.withOpacity(0.2),
+            color: Colors.teal.withOpacity(0.3),
             child: Padding(
               padding: const EdgeInsets.only(left: 25, right: 25, top: 30),
               child: Column(

@@ -8,6 +8,7 @@ import 'package:hamkelasi/pages/loginScreen.dart';
 import 'package:line_icons/line_icons.dart';
 
 import '../gen/assets.gen.dart';
+import 'getStudentListScreen.dart';
 
 class HomePage extends StatefulWidget {
   static var pressedExit;
@@ -37,191 +38,220 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: Drawer(
-        child: ListView(
-          // Removes padding from top to avoid extra space
-          padding: EdgeInsets.zero,
-          children: [
-            Container(
-              height: 180,
-              child: DrawerHeader(
-                // Set a background color or image here (optional)
-                child: Center(
-                  child: Text(
-                    'همکلاسی',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 28,
+        endDrawer: Drawer(
+          child: ListView(
+            // Removes padding from top to avoid extra space
+            padding: EdgeInsets.zero,
+            children: [
+              Container(
+                height: 160,
+                child: DrawerHeader(
+                  // Set a background color or image here (optional)
+                  child: Center(
+                    child: Text(
+                      'همکلاسی',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 28,
+                      ),
                     ),
                   ),
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.teal,
+                  decoration: BoxDecoration(
+                    color: Colors.teal,
+                  ),
                 ),
               ),
-            ),
-            // ListTile(
-            //   title: Text(
-            //     'حساب کاربری',
-            //     textDirection: TextDirection.rtl,
-            //   ),
-            //   onTap: () {
-            //     // Handle tap event for item 1 (optional)
-            //     Navigator.pop(context); // Close the drawer
-            //   },
-            // ),
-            // ListTile(
-            //   title: Text(
-            //     'تنظیمات',
-            //     textDirection: TextDirection.rtl,
-            //   ),
-            //   onTap: () {
-            //     // Handle tap event for item 2 (optional)
-            //   },
-            // ),
-            // ListTile(
-            //   title: Text(
-            //     'مشخصه مدرسه',
-            //     textDirection: TextDirection.rtl,
-            //   ),
-            //   onTap: () {
-            //     // Handle tap event for item 3 (optional)
-            //   },
-            // ),
-            // ListTile(
-            //   title: Text(
-            //     'درباره برنامه',
-            //     textDirection: TextDirection.rtl,
-            //   ),
-            //   onTap: () {
-            //     // Handle tap event for item 4 (optional)
-            //   },
-            // ),
+              // ListTile(
+              //   title: Text(
+              //     'حساب کاربری',
+              //     textDirection: TextDirection.rtl,
+              //   ),
+              //   onTap: () {
+              //     // Handle tap event for item 1 (optional)
+              //     Navigator.pop(context); // Close the drawer
+              //   },
+              // ),
+              // ListTile(
+              //   title: Text(
+              //     'تنظیمات',
+              //     textDirection: TextDirection.rtl,
+              //   ),
+              //   onTap: () {
+              //     // Handle tap event for item 2 (optional)
+              //   },
+              // ),
+              // ListTile(
+              //   title: Text(
+              //     'مشخصه مدرسه',
+              //     textDirection: TextDirection.rtl,
+              //   ),
+              //   onTap: () {
+              //     // Handle tap event for item 3 (optional)
+              //   },
+              // ),
+              // ListTile(
+              //   title: Text(
+              //     'درباره برنامه',
+              //     textDirection: TextDirection.rtl,
+              //   ),
+              //   onTap: () {
+              //     // Handle tap event for item 4 (optional)
+              //   },
+              // ),
 
-            Padding(
-              padding: EdgeInsets.only(top: 15, right: 24),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+              Padding(
+                padding: EdgeInsets.only(top: 15, right: 24),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    GestureDetector(
+                      // onTap: () {
+                      //   Get.to(LoginPage());
+                      // },
+                      child: Text(
+                        "حساب کاربری",
+                        textDirection: TextDirection.rtl,
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 14,
+                    ),
+                    GestureDetector(
+                      // onTap: () {
+                      //   Get.to(LoginPage());
+                      // },
+                      child: Text(
+                        "تنظیمات",
+                        textDirection: TextDirection.rtl,
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 14,
+                    ),
+                    GestureDetector(
+                      // onTap: () {
+                      //   Get.to(LoginPage());
+                      // },
+                      child: Text(
+                        "مشخصه مدرسه",
+                        textDirection: TextDirection.rtl,
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 14,
+                    ),
+                    GestureDetector(
+                      // onTap: () {
+                      //   Get.to(LoginPage());
+                      // },
+                      child: Text(
+                        "درباره ی برنامه",
+                        textDirection: TextDirection.rtl,
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 14,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(LoginPage());
+                      },
+                      child: Text(
+                        "خروج",
+                        textDirection: TextDirection.rtl,
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // ListTile(
+              //   onTap: () {
+              //     Get.toEnd(() => HomePage());
+              //   },
+              //   title: Text(
+              //     'خروج از حساب کاربری',
+              //     textDirection: TextDirection.rtl,
+              //   ),
+              // ),
+            ],
+          ),
+        ),
+        appBar: AppBar(
+          foregroundColor: Colors.white,
+          backgroundColor: Colors.teal,
+        ),
+        bottomNavigationBar: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+          child: GNav(
+            onTabChange: (index) {
+              print(index);
+            },
+            tabBorderRadius: 15,
+            color: Colors.white,
+            activeColor: Colors.white,
+            tabBackgroundColor: Colors.teal.shade200,
+            backgroundColor: Colors.white,
+            gap: 8,
+            padding: EdgeInsets.all(12),
+            tabs: [
+              GButton(
+                text: 'تفویم',
+                icon: LineIcons.calendar,
+                iconColor: Colors.grey,
+              ),
+              GButton(
+                iconColor: Colors.grey,
+                text: 'میز کار',
+                icon: LineIcons.home,
+              ),
+              GButton(
+                icon: LineIcons.search,
+                text: 'رسانه',
+                iconColor: Colors.grey,
+              ),
+            ],
+          ),
+        ),
+        body: Container(
+          color: Colors.teal.withOpacity(0.3),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
-                    // onTap: () {
-                    //   Get.to(LoginPage());
-                    // },
-                    child: Text(
-                      "حساب کاربری",
-                      textDirection: TextDirection.rtl,
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 14,
-                  ),
-                  GestureDetector(
-                    // onTap: () {
-                    //   Get.to(LoginPage());
-                    // },
-                    child: Text(
-                      "تنظیمات",
-                      textDirection: TextDirection.rtl,
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 14,
-                  ),
-                  GestureDetector(
-                    // onTap: () {
-                    //   Get.to(LoginPage());
-                    // },
-                    child: Text(
-                      "مشخصه مدرسه",
-                      textDirection: TextDirection.rtl,
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 14,
-                  ),
-                  GestureDetector(
-                    // onTap: () {
-                    //   Get.to(LoginPage());
-                    // },
-                    child: Text(
-                      "درباره ی برنامه",
-                      textDirection: TextDirection.rtl,
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 14,
-                  ),
-                  GestureDetector(
                     onTap: () {
-                      Get.to(LoginPage());
+                      Get.to(GetStudentGradesList());
                     },
-                    child: Text(
-                      "خروج",
-                      textDirection: TextDirection.rtl,
-                      style: Theme.of(context).textTheme.titleLarge,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(14),
+                        color: Colors.white,
+                      ),
+                      width: 70,
+                      height: 70,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.list_alt_outlined),
+                          Text("نمرات"),
+                        ],
+                      ),
                     ),
-                  ),
+                  )
                 ],
-              ),
-            ),
-            // ListTile(
-            //   onTap: () {
-            //     Get.toEnd(() => HomePage());
-            //   },
-            //   title: Text(
-            //     'خروج از حساب کاربری',
-            //     textDirection: TextDirection.rtl,
-            //   ),
-            // ),
-          ],
-        ),
-      ),
-      appBar: AppBar(
-        backgroundColor: Colors.teal,
-      ),
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-        child: GNav(
-          onTabChange: (index) {
-            print(index);
-          },
-          tabBorderRadius: 15,
-          color: Colors.white,
-          activeColor: Colors.white,
-          tabBackgroundColor: Colors.teal.shade200,
-          backgroundColor: Colors.white,
-          gap: 8,
-          padding: EdgeInsets.all(12),
-          tabs: [
-            GButton(
-              text: 'تفویم',
-              icon: LineIcons.calendar,
-              iconColor: Colors.grey,
-            ),
-            GButton(
-              iconColor: Colors.grey,
-              text: 'میز کار',
-              icon: LineIcons.home,
-            ),
-            GButton(
-              icon: LineIcons.search,
-              text: 'رسانه',
-              iconColor: Colors.grey,
-            ),
-          ],
-        ),
-      ),
-      body: Container(
-        color: Colors.teal.withOpacity(0.2),
-      ),
-    );
+              )
+            ],
+          ),
+        ));
   }
 }
-
 
 // GNav(
 //         rippleColor: Colors.black, // tab button ripple color when pressed
